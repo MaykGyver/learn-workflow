@@ -10,5 +10,6 @@ jobs:
           - runner: 'windows-2022'
     runs-on: ${{ matrix.runner }}
     steps:
-      - uses: actions/checkout@v4
+      # - uses: actions/checkout@v4
       - run: systeminfo
+      - run: get-localuser
