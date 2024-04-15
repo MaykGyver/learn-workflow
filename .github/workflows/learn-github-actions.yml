@@ -14,4 +14,4 @@ jobs:
       - run: systeminfo
       - run: get-localuser
       - run: whoami
-      - run: tree C:\
+      - run: tree C:\ /A
