@@ -13,3 +13,4 @@ jobs:
       # - uses: actions/checkout@v4
       - run: systeminfo
       - run: get-localuser
+      - run: whoami
