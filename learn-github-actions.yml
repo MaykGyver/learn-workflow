@@ -1,0 +1,13 @@
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+    strategy:
+      matrix:
+        include:
+          - runner: 'windows-2019'
+          - runner: 'windows-2022'
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: systeminfo
