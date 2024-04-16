@@ -10,8 +10,14 @@ jobs:
           - runner: 'windows-2022'
     runs-on: ${{ matrix.runner }}
     steps:
+      - run: echo ${{ runner.arch }}
+      - run: echo ${{ runner.name }}
+      - run: echo ${{ runner.os }}
+      - run: echo ${{ runner.temp }}
+      - run: echo ${{ runner.tool_cache }}
       # - uses: actions/checkout@v4
-      - run: systeminfo
-      - run: get-localuser
-      - run: whoami
-      - run: tree C:\ /A
+      - run: systeminfo > systeminfo.txt
+      - run: get-localuser > localuser.txt
+      - run: whoami > whoami.txt
+      # - run: tree C:\ /A > tree.txt
+      
