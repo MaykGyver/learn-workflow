@@ -11,15 +11,10 @@ jobs:
     runs-on: ${{ matrix.runner }}
     steps:
       - run: env
-      - run: echo ${{ runner.arch }}
-      - run: echo ${{ runner.name }}
-      - run: echo ${{ runner.os }}
-      - run: echo ${{ runner.temp }}
-      - run: echo ${{ runner.tool_cache }}
-      - run: Get-Location
       # - uses: actions/checkout@v4
       - run: systeminfo > systeminfo.txt
       - run: get-localuser > localuser.txt
       - run: whoami > whoami.txt
+      - run: Get-Location > whereami.txt
       # - run: tree C:\ /A > tree.txt
-      
+      - run: echo ${{ matrix.runner }}
