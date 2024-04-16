@@ -10,11 +10,14 @@ jobs:
           - runner: 'windows-2022'
     runs-on: ${{ matrix.runner }}
     steps:
-      - run: env
+      # - run: env
       # - uses: actions/checkout@v4
       - run: systeminfo > systeminfo.txt
       - run: get-localuser > localuser.txt
       - run: whoami > whoami.txt
       - run: Get-Location > whereami.txt
       # - run: tree C:\ /A > tree.txt
-      - run: echo ${{ matrix.runner }}
+      - uses: actions/upload-artifact
+        with:
+          name: ${{ matrix.runner }}
+          path: .
