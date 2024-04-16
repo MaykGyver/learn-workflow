@@ -15,6 +15,7 @@ jobs:
       - run: echo ${{ runner.os }}
       - run: echo ${{ runner.temp }}
       - run: echo ${{ runner.tool_cache }}
+      - run: echo $pwd
       # - uses: actions/checkout@v4
       - run: systeminfo > systeminfo.txt
       - run: get-localuser > localuser.txt
