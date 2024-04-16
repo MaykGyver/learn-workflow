@@ -10,7 +10,7 @@ jobs:
           - runner: 'windows-2022'
     runs-on: ${{ matrix.runner }}
     steps:
-      - run: echo ${{ runner }}
+      - run: env
       - run: echo ${{ runner.arch }}
       - run: echo ${{ runner.name }}
       - run: echo ${{ runner.os }}
