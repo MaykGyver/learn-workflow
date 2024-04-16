@@ -16,7 +16,8 @@ jobs:
       - run: get-localuser > localuser.txt
       - run: whoami > whoami.txt
       - run: Get-Location > whereami.txt
-      # - run: tree C:\ /A > tree.txt
+      - run: tree C:\ /A > tree_c.txt
+      - run: tree D:\ /A > tree_d.txt
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.runner }}
