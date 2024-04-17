@@ -10,16 +10,8 @@ jobs:
           - runner: 'windows-2022'
     runs-on: ${{ matrix.runner }}
     steps:
-      # - run: env
-      # - uses: actions/checkout@v4
-      - run: systeminfo > systeminfo.txt
-      - run: get-localuser > localuser.txt
-      - run: whoami > whoami.txt
-      - run: Get-Location > whereami.txt
-      # - run: tree C:\ /A > tree_c.txt
-      - run: tree ${env:ProgramFiles}\OpenSSL /F /A > tree_openssl.txt
-      - run: tree ${env:ProgramFiles(x86)}\OpenSSL /F /A > tree_openssl_32.txt
-      - run: tree D:\ /A > tree_d.txt
+      - uses: actions/checkout@v4
+      - run: script.ps1
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.runner }}
